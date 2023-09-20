@@ -53,4 +53,14 @@ contract DAO {
         proposals.push(Proposal({description: _description, voteCount: 0, executed: false}));
         emit ProposalCreated(proposals.length - 1, _description);
     }
+
+    function vote(uint _proposalId, uint _tokenAmount) public {
+        require(memberInfo[msg.sender].memberAddress != address(0), "Only members can vote");
+        require(balances[msg.sender] >= _tokenAmount, "Not enough tokens to vote");
+        require(votes[msg.sender][_proposalId] == false, "You have already voted for this proposal");
+        votes[msg.sender][_proposalId] = true;
+        memberInfo[msg.sender].tokenBalance -= _tokenAmount;
+        proposals[_proposalId].voteCount += _tokenAmount;
+        emit VoteCast(msg.sender, _proposalId, _tokenAmount);
+    }
 }
