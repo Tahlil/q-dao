@@ -90,7 +90,7 @@ const config: HardhatUserConfig = {
       accounts: [`0x${PRIVATE_KEY}`],
       chainId: chainIds.sepolia,
     },
-    mainnet: {
+    ethermainnet: {
       url: getRPCURL('mainnet', defaultRPCNodeProvider),
       accounts: [`0x${PRIVATE_KEY}`],
       chainId: chainIds.mainnet,
@@ -143,6 +143,14 @@ const config: HardhatUserConfig = {
       // gasPrice: 20000000000,
       accounts: [`0x${PRIVATE_KEY}`],
     },
+    testnet: {
+      url: "https://rpc.qtestnet.org",
+      accounts: [`0x${PRIVATE_KEY}`],
+    },
+    mainnet: {
+      url: "https://rpc.q.org",
+      accounts: [`0x${PRIVATE_KEY}`],
+    }
   },
  
   solidity: {
