@@ -2,6 +2,9 @@
 
 Starting project with typescript hardhat boilerplate
 
+# Dependency
+Node V20+
+
 ## Instruction
 - Compile:
 ```
