@@ -63,4 +63,13 @@ contract DAO {
         proposals[_proposalId].voteCount += _tokenAmount;
         emit VoteCast(msg.sender, _proposalId, _tokenAmount);
     }
+
+    function executeProposal(uint _proposalId) public {
+        require(proposals[_proposalId].executed == false, "Proposal has already been executed");
+        if (((proposals[_proposalId].voteCount / totalSupply) * 100) > 50) {
+            proposals[_proposalId].executed = true;
+            emit ProposalAccepted("Proposal has been approved");
+        }
+        emit ProposalRejected("Proposal has not been approved by majority vote");
+    }
 }
