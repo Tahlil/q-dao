@@ -1,9 +1,16 @@
 import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
-import "@nomiclabs/hardhat-solhint";
-import '@typechain/hardhat'
-import '@nomiclabs/hardhat-ethers';
-import '@nomiclabs/hardhat-waffle';
+// import "@nomicfoundation/hardhat-toolbox";
+// import "@nomiclabs/hardhat-solhint";
+// import '@typechain/hardhat'
+// import '@nomiclabs/hardhat-ethers';
+// import '@nomiclabs/hardhat-waffle';
+require("@nomiclabs/hardhat-web3");
+require("@nomiclabs/hardhat-truffle5");
+require('crypto');
+require('@openzeppelin/hardhat-upgrades');
+require("@dlsl/hardhat-migrate");
+require('web3')
+
 const dotenv = require('dotenv');
 const path = require('path');
 
