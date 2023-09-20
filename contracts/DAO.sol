@@ -48,4 +48,9 @@ contract DAO {
         balances[_member] = 0;
         totalSupply -= 100;
     }
+
+    function createProposal(string memory _description) public {
+        proposals.push(Proposal({description: _description, voteCount: 0, executed: false}));
+        emit ProposalCreated(proposals.length - 1, _description);
+    }
 }
