@@ -38,6 +38,7 @@
     "chain": "npx hardhat node",
     "compile": "npx hardhat compile",
     "deploy": "npx hardhat run --network localhost scripts/deploy.ts",
+    "deploy:qtestnet": "npx hardhat run scripts/AirDropV1/1_deploy_token.js --network testnet",
     "deploy:rinkeby": "npx hardhat run --network rinkeby scripts/deploy.ts",
     "deploy:ropsten": "npx hardhat run --network ropsten scripts/deploy.ts",
     "deploy:goerli": "npx hardhat run --network goerli scripts/deploy.ts",
