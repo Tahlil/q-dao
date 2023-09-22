@@ -6,17 +6,17 @@ const fs = require("fs");
 
 async function main() {
     
-	  const qrc20Address = "<YOUR-QRC20-TOKEN-ADDRESS>"
+	  const qrc20Address = "0x3D38B1337171536b37E912fA3c80f39C94cFeB6C"
     const QRC20 = await ethers.getContractFactory("QRC20");
     const contract = QRC20.attach(qrc20Address);
 
     // Merkle Root
     let addresses = [
       {
-          addr: "<YOUR-PUBLIC-WALLET-ADDRESS>",
+          addr: "0x775c17Bb2f9a1a9A27470F27dD3af2eaA8E0B7d9",
       },
       {
-          addr: "<YOUR-FRIEND-PUBLIC-WALLET-ADDRESS>"
+          addr: "0x2630c93C5061C3aac65e3cd316aAB38c8aAc20ea"
       
       },
       ];
