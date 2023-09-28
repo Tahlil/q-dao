@@ -23,7 +23,7 @@ async function main() {
 
   // Creating a voting proposal to add the module to the DAO Registry
   console.log(`Create Proposal to add ${MODULE_NAME} module to the DAO Registry`);
-  await VotingContract.createProposal("DAORegistry", `Adding ${MODULE_NAME} to the DAO Contract Registry`, addModuleCalldata, {
+  await VotingContract.createProposal("DAO Registry Vote", `Adding ${MODULE_NAME} to the DAO Contract Registry`, addModuleCalldata, {
     from: senderAddress,
   });
 
